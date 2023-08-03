@@ -1,8 +1,10 @@
 # Push images to ecr with github actions
 ## About
 This repo is a demo for building image and push image to ECR with github action.
+
 ![architect.png](https://github.com/jianxing31/gitHub-action-push-image-to-ecr/blob/master/images/architect.png)
-In this demo, Github action will assume a IAM role to get the permission of pushing to ECR. There are other ways to assume IAM role, like using aws credentials or using eks-hosted action runners(I prefer this way in prod.)
+
+In this demo, Github action will assume a IAM role to get the permission of pushing docker images to ECR. There are other ways to assume IAM role, like using aws credentials or using eks-hosted action runners(I prefer this way in prod.)
 
 ## Getting Started
 ### 1. set up environments
@@ -12,7 +14,7 @@ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 export AWS_DEFAULT_REGION=us-west-2
 ```
-- Set up the values in variables.tf
+- Set up the values in variables.tf  
 You need to replace var.allowed_github_repos with your repo name.
 
 ### 2. Deploy the resources in this repo
@@ -26,7 +28,7 @@ terraform init
 terraform apply
 ```
 
-### 3. Build a workflow to build image and push image to ECR
+### 3. Build a workflow to build images and push images to ECR
 Example workflow:
 ```shell
 name: image-build-and-push
