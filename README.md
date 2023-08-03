@@ -63,7 +63,6 @@ jobs:
           ECR_REPOSITORY: github_action_repository
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          cd security-sandbox/ecr
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 ```
