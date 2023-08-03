@@ -4,7 +4,7 @@ This repo is a demo for building image and push image to ECR with github action.
 
 ![architect.png](https://github.com/jianxing31/gitHub-action-push-image-to-ecr/blob/master/images/architect.png)
 
-In this demo, Github action will assume a IAM role to get the permission of pushing docker images to ECR. There are other ways to assume IAM role, like using aws credentials or using eks-hosted action runners(I prefer this way in prod.)
+In this demo, Github action will assume a IAM role to get the permission of pushing docker images to ECR. There are other ways to assume IAM role, like using aws credentials or using eks-hosted action runners.
 
 ## Getting Started
 ### 1. set up environments
