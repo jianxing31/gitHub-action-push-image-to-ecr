@@ -67,6 +67,46 @@ jobs:
 ```
 
 <!-- BEGIN_TF_DOCS -->
+### Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.3.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.6.0 |
+
+### Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.6.0 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
+
+### Modules
+
+No modules.
+
+### Resources
+
+| Name | Type |
+|------|------|
+| [aws_ecr_repository.github_action](https://registry.terraform.io/providers/hashicorp/aws/5.6.0/docs/resources/ecr_repository) | resource |
+| [aws_iam_openid_connect_provider.github_actions](https://registry.terraform.io/providers/hashicorp/aws/5.6.0/docs/resources/iam_openid_connect_provider) | resource |
+| [aws_iam_role.github_actions](https://registry.terraform.io/providers/hashicorp/aws/5.6.0/docs/resources/iam_role) | resource |
+| [aws_iam_policy_document.ecr_push](https://registry.terraform.io/providers/hashicorp/aws/5.6.0/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.github_actions](https://registry.terraform.io/providers/hashicorp/aws/5.6.0/docs/data-sources/iam_policy_document) | data source |
+| [tls_certificate.github_actions](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/data-sources/certificate) | data source |
+
+### Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_allowed_github_repos"></a> [allowed\_github\_repos](#input\_allowed\_github\_repos) | Allowed github repos. Need to replace this value with your repos | `list(any)` | n/a | yes |
+| <a name="input_ecr_repo_name"></a> [ecr\_repo\_name](#input\_ecr\_repo\_name) | Ecr repo name that will be created | `string` | `"github_action_repository"` | no |
+| <a name="input_github_action_iam_name"></a> [github\_action\_iam\_name](#input\_github\_action\_iam\_name) | IAM role name that github action can assume | `string` | `"github-actions-role"` | no |
+
+### Outputs
+
+No outputs.
 <!-- END_TF_DOCS -->
 
 ## Reference
